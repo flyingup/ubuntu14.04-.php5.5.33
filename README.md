@@ -10,7 +10,7 @@ ubuntu14.04 安装php5.5.33
 进入解压之后的php源码目录
 
     cd php-5.5.15
-配置.config
+编译.config
 
     ./configure
     --prefix=/usr/local/php/ 
@@ -77,9 +77,7 @@ Note that the MySQL Client library isnot boundled anymore.
 10.Cannot find OpenSSL's <evp.h>
 
       sudo apt-get install libssl-dev
-成功执行的话进行编译
 
-    make
 编译完成进行安装
 
-    sudo make install
+    sudo  make  && make install
