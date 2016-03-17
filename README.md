@@ -77,6 +77,18 @@ Note that the MySQL Client library isnot boundled anymore.
 10.Cannot find OpenSSL's <evp.h>
 
       sudo apt-get install libssl-dev
+11. configure: error: Cannot find OpenSSL's libraries 确认已安装过 
+openssl、libssl-dev 包，还是会提示该错误；
+ 解决办法：
+
+     root@test2:~/php-5.3.27# find / -name libssl.so
+输出结果为：
+      
+      /usr/lib/x86_64-linux-gnu/libssl.so
+ 初步判断它可能只会在 /usr/lib/ 下寻找 libssl.so 文件，于是：
+   
+      ln -s /usr/lib/x86_64-linux-gnu/libssl.so  /usr/lib
+重新编译安装即通过。
 
 编译完成进行安装
 
